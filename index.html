@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Pixel Online</title>
+    <script src="https://kit.fontawesome.com/6097310699.js" crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="left_sticky_section">
+      <div id="toptoolbar">
+        <button id="uploadButton" class="button" style="background-color: #d0d0d0;"><i class="fa-solid fa-file"></i></button>
+        <input type="file" id="imageInput" accept="image/*" hidden>
+        <input type="number" id="brushscale" min="1" max="10" value="1">
+      </div>
+      <div id="lefttoolbar">
+        <button id="brushButton" class="button" tool_index="0" style="background-color: #d0d0d0;"><i class="fa-solid fa-pen"></i></button>
+        <button id="eraserButton" class="button" tool_index="1" style="background-color: #d0d0d0;"><i class="fa-solid fa-eraser"></i></button>
+        <button id="paintbucketButton" class="button" tool_index="2" style="background-color: #d0d0d0;"><i class="fa-solid fa-fill"></i></button>
+        <button id="handButton" class="button" tool_index="3" style="background-color: #dedede;"><i class="fa-solid fa-hand"></i></button>
+        <button id="clearButton" class="button" style="background-color: #d0d0d0;"><i class="fa-sharp fa-solid fa-trash"></i></button>
+      </div>
+      <div id="colorPicker">
+        <div class="color">
+          <label>R</label>
+          <canvas class="color-slider" channel=#ff0000></canvas>
+          <input type="number" id="Rchannel" min="0" max="255" value="0" style="border: none; background-color: #d0d0d0; text-align:center; width: 40px; height: 10x; overflow:visible; margin-left: 4px;">
+        </div>
+        <div class="color">
+          <label>G</label>
+          <canvas class="color-slider" channel=#00ff00></canvas>
+          <input type="number" id="Gchannel" min="0" max="255" value="0" style="border: none; background-color: #d0d0d0; text-align:center; width: 40px; height: 10x; overflow:visible; margin-left: 4px;">
+        </div>
+        <div class="color">
+          <label>B</label>
+          <canvas class="color-slider" channel=#0000ff></canvas>
+          <input type="number" id="Bchannel" min="0" max="255" value="0" style="border: none; background-color: #d0d0d0; text-align:center; width: 40px; height: 10x; overflow:visible; margin-left: 4px;">
+        </div>
+        <div class="color">
+          <label>A</label>
+          <canvas class="color-slider" channel=#00000000></canvas>
+          <input type="number" id="Achannel" min="0" max="255" value="255" style="border: none; background-color: #d0d0d0; text-align:center; width: 40px; height: 10x; overflow:visible; margin-left: 4px;">
+        </div>
+      </div>
+    </div>
+    <div id="right_sticky_section">
+      <div id="righttoolbar">
+        <div>
+          <input type="number" id="bfScale" min="2" max="10" value="2" style="border: none; text-align:center; width: 40px; height: 10x; overflow:visible; margin-left: 4px;">
+          <button id="bfButton" class="button" style="background-color: #d0d0d0;"><i class="fa-solid fa-box"></i></button>
+        </div>
+        <button id="gkButton" class="button" style="background-color: #d0d0d0;">G</button>
+        <div>
+          <input type="number" id="DPIDScale" min="2" max="10" value="2" style="border: none; text-align:center; width: 40px; height: 10x; overflow:visible; margin-left: 4px;">
+          <button id="DPIDButton" class="button" style="background-color: #d0d0d0;">D</button>
+        </div>
+      </div>
+    </div>
+    <div class="window" style="width: 640px; height: 640px; border: 1px solid black;">
+      <div id="viewport" class="viewport">
+        <div id="canvaswrapper">
+          <canvas id="viewcanvas" width="512" height="512"></canvas>
+          <canvas id="cursorcanvas" width="512" height="512" style="pointer-events:none; content:transparent; background:transparent;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
