@@ -18,7 +18,6 @@ export class Hand extends BaseTool {
     this.drawing = true;
     lastX = pos.x;
     lastY = pos.y;
-    console.log(X, Y);
   }
 
   onWindowMouseMove(pos) {
@@ -28,7 +27,6 @@ export class Hand extends BaseTool {
       lastX = pos.x;
       lastY = pos.y;  
       viewport.style.transform = `translate(${X}px, ${Y}px)`;
-      console.log(X, Y);
     }    
   }
 

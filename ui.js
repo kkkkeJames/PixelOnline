@@ -40,6 +40,15 @@ document.getElementById('imageInput').onchange = e => {
   img.src = URL.createObjectURL(file);
 };
 
+const downloadButton = document.getElementById("downloadButton");
+downloadButton.addEventListener('click', () => {
+    const dataURL = editor.viewcanvas.toDataURL('image/png');
+    const a = document.createElement('a');
+    a.href = dataURL;
+    a.download = 'new_image.png';
+    a.click();
+});
+
 // Button of clear, if pressed, fill the whole project with transparent white
 document.getElementById('clearButton').onclick = () => {
   const project = editor.project;

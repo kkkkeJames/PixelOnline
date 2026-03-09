@@ -45,6 +45,7 @@ body {
     display: flex;
     gap: 4px;
     align-items: center;
+    flex-direction: column;
 }
 #left_sticky_section #lefttoolbar {
     position: fixed;

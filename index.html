@@ -12,7 +12,7 @@
       <div id="toptoolbar">
         <button id="uploadButton" class="button" style="background-color: #d0d0d0;"><i class="fa-solid fa-file"></i></button>
         <input type="file" id="imageInput" accept="image/*" hidden>
-        <input type="number" id="brushscale" min="1" max="10" value="1">
+        <button id="downloadButton" class="button" style="background-color: #d0d0d0;"><i class="fa-solid fa-download"></i></button>
       </div>
       <div id="lefttoolbar">
         <button id="brushButton" class="button" tool_index="0" style="background-color: #d0d0d0;"><i class="fa-solid fa-pen"></i></button>
@@ -22,6 +22,7 @@
         <button id="clearButton" class="button" style="background-color: #d0d0d0;"><i class="fa-sharp fa-solid fa-trash"></i></button>
       </div>
       <div id="colorPicker">
+        <input type="number" id="brushscale" min="1" max="10" value="1">
         <div class="color">
           <label>R</label>
           <canvas class="color-slider" channel=#ff0000></canvas>
